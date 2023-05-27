@@ -1,0 +1,33 @@
+/*
+==========================================================================
+Media quiries
+==========================================================================
+*/
+
+@media (max-width: 992px) {
+	/* Container */
+	._container {
+		padding-left: 50px;
+		padding-right: 50px;
+	}
+
+	/* Section */
+	._section {
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+}
+
+@media (max-width: 768px) {
+	/* Container */
+	._container {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	/* Section */
+	._section {
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+}
