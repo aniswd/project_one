@@ -92,6 +92,8 @@ body{
 	font-size: var(--font_size_normal);
 	line-height: 1.6;
 	font-weight: var(--font_weight_400);
+	width: 410px;
+	margin: auto;
 }
 
 /* Scollbar style */
@@ -162,6 +164,7 @@ Layout syle
 /* Section */
 ._section {
 	padding-top: 50px;
+	padding-bottom: 50px;
 }
 
 /* Row grid */
@@ -373,49 +376,62 @@ Layout syle
 ._check_availability {
 	display: flex;
 	align-items: center;
-	background: #fff;
-	height: 110px;
+	height: 100px;
 	padding: 5px;
 	text-align: center;
 	position: absolute;
 	bottom: -50px;
-	left: 15px;
-	right: 15px;
+	left: 3px;
+	right: 3px;
+	border-radius: 5px 5px 0 0;
 	z-index: 1;
 }
 
-._check_availability:before {
-	position: absolute;
-	content: "";
-	top: 2px;
-	left: 2px;
-	right: 2px;
-	bottom: 2px;
-	background: whitesmoke;
-	border: 1px solid #999;
-	z-index: -1;
-}
-
 ._check_item {
+	background: #333;
 	width: 25%;
 	height: 100px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	cursor: pointer;
-	border: 2px solid #fff;
+	border: 2px solid dodgerblue;
+	border-right: none;
 	transition: all .5s;
 }
 
 ._check_item h6 {
-	color: #333;
-	font-weight: 600;
+	font-family: 'Montserrat', sans-serif;
+	color: #fff;
+	font-weight: 500;
 	font-size: 12px;
+}
+
+._check_item:hover h6 {
+	color: #333;
 }
 
 ._check_item:hover {
 	background: #fefefe;
+}
+
+.form-control, .guests select {
+	padding: 2px 3px;
+	font-size: 12px;
+	font-weight: 600;
+	font-family: 'Montserrat', sans-serif;
+	border: 1px solid dodgerblue;
+	border-radius: 5px;
+	width: 80px;
+	text-align: center;
+}
+
+._check_item .input-group-btn {
+	display: none;
+}
+
+.date-select .select span.num {
+	font-size: 20px;
 }
 
 ._check_item_2 {
@@ -430,43 +446,24 @@ Layout syle
 	transition: all .5s;
 }
 
-._check_item_2 a {
+._check_item_2 .btn {
+	border: 0;
+	background: #fff;
 	font-size: 13px;
 	font-weight: 500;
+	font-family: 'Montserrat', sans-serif;
+	color: #333;
+	width: 85px;
+	height: 60px;
+	border: 1px solid #fff;
+	border-radius: 5px;
+	transition: all .5s;
+	cursor: pointer;
+}
+
+._check_item_2 .btn:hover {
+	background: transparent;
 	color: #fff;
-}
-
-._check_item_2:hover {
-	background: #F02837;
-}
-
-._check_item ._date {
-	display: flex;
-	gap: 8px;
-	justify-content: center;
-	align-items: center;
-}
-
-._check_item  ._number {
-	font-weight: 600;
-	font-size: 25px;
-}
-
-._check_item ._month {
-	position: relative;
-	font-size: 15px;
-}
-
-._check_item ._month span {
- 	color: red;
-}
-
-._check_item ._month .fa {
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
-	font-size: 15px;
-	font-weight: 600;
 }
 
 /* Thailand hotels */
@@ -475,7 +472,11 @@ Layout syle
 	margin-top: 20px;
 }
 
-#resort ._img_gal {
+#resort {
+	background: #F0F8FF;
+}
+
+#photoGal ._img_gal {
 	margin-top: 15px;
 }
 
@@ -507,6 +508,10 @@ Layout syle
 
 /* Review */
 
+#review {
+	background: #F0F8FF;
+}
+
 ._review_items {
 	margin-top: 15px;
 }
@@ -530,17 +535,52 @@ Layout syle
 	width: 70%;
 }
 
-._ratings span:nth-child(1) .fa {
+._ratings._good span:nth-child(1) .fa {
 	color: #F02837;
 }
 
-._ratings span:nth-child(2) .fa {
+._ratings._good span:nth-child(2) .fa {
 	color: #F02837;
 }
 
-._ratings span:nth-child(3) .fa {
+._ratings._good span:nth-child(3) .fa {
 	color: #F02837;
 }
+
+._ratings._ok span:nth-child(1) .fa {
+	color: #F02837;
+}
+
+._ratings._ok span:nth-child(2) .fa {
+	color: #F02837;
+}
+
+._ratings._ok span:nth-child(3) .fa {
+	color: #F02837;
+}
+
+._ratings._ok span:nth-child(4) .fa {
+	color: #F02837;
+}
+
+._ratings._great span .fa {
+	color: #F02837;
+}
+
+#review ._star_rated {
+	display: flex;
+	gap: 10px;
+}
+
+#review ._star_rated ._rated_text {
+	color: forestgreen;
+	font-size: 14px;
+}
+
+#facilities._section {
+	padding-top: 0;
+}
+
 
 #facilities ul {
 	grid-gap: 5px;
@@ -618,65 +658,92 @@ Layout syle
 
 /* Booking */
 
-#booking ul {
-	grid-gap: 5px;
+#booking ._booking_rooms {
+	grid-gap: 30px 20px;
 	margin-top: 15px;
 }
 
 #booking ul li {
-	position: relative;
-	text-align: center;
-	height: 250px;
-	z-index: 1;
-	cursor: pointer;
+	box-shadow: 0 10px 10px #ddd;
 }
 
-#booking ul li img {
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 100%;
-	z-index: -1;
-}
 
 #booking ul li ._booking_content {
-	position: absolute;
-	left: 7px;
-	right: 7px;
-	bottom: 5px;
-	background: rgba(0,0,0,0.5);
+	padding: 20px;
+	text-align: center;
 }
 
 #booking ul li ._booking_content h4 {
-	color: #fff;
 	font-size: 13px;
 }
 
 #booking ul li ._booking_content p {
-	color: #fff;
 	font-size: 12px;
-	padding: 0 4px;
 }
 
 #booking ul li ._booking_content a {
+	margin-top: 10px;
 	color: #fff;
-	display: block;
-	width: 100%;
-	padding: 10px 0;
+	display: inline-block;
+	padding: 5px 25px;
 	font-weight: 500;
 	background: #F02837;
 	border: 1px solid #F02837;
+	border-radius: 3px;
 	transition: all 0.5s;
 }
 
 #booking ul li ._booking_content a:hover {
 	background: transparent;
+	color: #333;
+}
+
+#booking ._popup_img {
+	position: relative;
+	display: block;
+}
+
+#booking ._popup_img:before {
+	position: absolute;
+	content: "\f00e";
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	font-family: "fontawesome";
+	color: #fff;
+	font-size: 20px;
+	z-index: 1;
+	transition: 1s;
+	opacity: 0;
+}
+
+#booking ._popup_img:after {
+	position: absolute;
+	content: "";
+	top: 0;
+	left: 0;
+	width: 100%;
+	bottom: 7px;
+	background: rgba(0,0,0,0.5);
+	transition: .5s;
+	transform: scale(0);
+}
+
+#booking ._popup_img:hover:before{
+	opacity: 1;
+}
+
+#booking ._popup_img:hover:after{
+	transform: scale(1);
 }
 
 /* Footer */
 
-#footer ._container {
+#footer {
 	background: #000;
+}
+
+#footer ._container {
 	padding-top: 30px;
 	padding-bottom: 20px;
 }
