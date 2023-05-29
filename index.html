@@ -11,8 +11,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/magnificpopup.css">
   <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
   <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="assets/css/jquery.dateselect.css">
   <link rel="stylesheet" href="assets/css/grid.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
@@ -69,7 +71,7 @@
   </header>
   <div id="secdHeader" class="_secd_header">
     <ul>
-      <li><a href="#resort">Photos</a></li>
+      <li><a href="#photoGal">Photos</a></li>
       <li><a href="#review">Reviews</a></li>
       <li><a href="#booking">Rooms</a></li>
       <li><a href="#footer">Maps</a></li>
@@ -83,41 +85,45 @@
           <h2>Sofitel Sumvit Hotel<br/>Bangkok</h2>
           <p>Lorem, Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Iste Repudiandae Error Totam Commodi Laborum Quaerat Atque Consequuntur Qui Ea, Libero Debitis Soluta Eaque Id Quasi Animi Et Vel Obcaecati, Quibusdam Nemo Placeat Amet. Totam Numquam Odio Enim, Quas Ipsa Harum Eius Mollitia, At Sunt Expedita Aut Nulla In Repudiandae Doloremque!</p>
         </div>
-        <div class="_check_availability">
+        <form class="_check_availability">
           <div class="_check_item">
             <h6>Check In</h6>
             <div class="_date">
-              <div class="_number">8</div>
-                <div class="_month">
-                    <span>May</span><br> 
-                      <i class="fa fa-angle-down"></i>
-                  </div>
+              <input type="text" name="date1" id="date1" class="form-control" data-select="date" value="Select Date">
+              <span class="input-group-btn">
+                <button class="btn btn-primary" type="button" data-toggle="select"><i class="fa fa-calendar"></i></button>
+              </span>
             </div>
           </div>
           <div class="_check_item">
             <h6>Check Out</h6>
             <div class="_date">
-              <div class="_number">10</div>
-                <div class="_month">
-                  <span>May</span> <br>
-                  <i class="fa fa-angle-down"></i>
-                </div>
+              <input type="text" name="date1" id="date1" class="form-control" data-select="date" value="Select Date">
+              <span class="input-group-btn">
+                <button class="btn btn-primary" type="button" data-toggle="select"><i class="fa fa-calendar"></i></button>
+              </span>
             </div>
           </div>
           <div class="_check_item">
             <h6>Guests</h6>
-              <div class="_date">
-                <div class="_number">8</div>
-                  <div class="_month">
-                      <i class="fa fa-angle-up" style="margin-top: -15px;"></i>
-                      <i class="fa fa-angle-down"></i>
-                    </div>
+              <div class="guests">
+               <select id="cars">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="4">5</option>
+                  <option value="4">6</option>
+                  <option value="4">7</option>
+                  <option value="4" selected>8</option>
+              </select>
               </div>
           </div>
           <div class="_check_item_2">
-            <a href="#">Check<br>Availability</a>
+            <button class="btn btn-primary" type="button">Check<br/>Availability
+            </button>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   </section>
@@ -150,7 +156,7 @@
     </div>
   </section>
 
-  <section id="resort" class="_section">
+  <section id="photoGal" class="_section">
     <div class="_container">
       <div class="_row_g _col_1">
         <div class="_content_1">
@@ -245,13 +251,18 @@
             <li>
               <p class="_comts">"Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit."</p>
               <h4>Jon Doe</h4>
-              <p class="_ratings">
+              <div class="_star_rated">
+                <p class="_rated_text">
+                  Rated: Good
+                </p>
+                <p class="_ratings _good">
                 <span><i class="fa fa-star"></i></span>
                 <span><i class="fa fa-star"></i></span>
                 <span><i class="fa fa-star"></i></span>
                 <span><i class="fa fa-star"></i></span>
                 <span><i class="fa fa-star"></i></span>
               </p>
+              </div>
             </li>
 
           </ul>
@@ -262,13 +273,39 @@
              <li>
               <p class="_comts">"Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit."</p>
               <h4>Jon Smith</h4>
-              <p class="_ratings">
+              <div class="_star_rated">
+                <p class="_rated_text">
+                  Rated: Ok
+                </p>
+                <p class="_ratings _ok">
                 <span><i class="fa fa-star"></i></span>
                 <span><i class="fa fa-star"></i></span>
                 <span><i class="fa fa-star"></i></span>
                 <span><i class="fa fa-star"></i></span>
                 <span><i class="fa fa-star"></i></span>
               </p>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li><div class="_img_box"><img src="assets/img/team.jpg"></div></li>
+             <li>
+              <p class="_comts">"Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit."</p>
+              <h4>Jack</h4>
+              <div class="_star_rated">
+                <p class="_rated_text">
+                  Rated: Great
+                </p>
+                <p class="_ratings _great">
+                <span><i class="fa fa-star"></i></span>
+                <span><i class="fa fa-star"></i></span>
+                <span><i class="fa fa-star"></i></span>
+                <span><i class="fa fa-star"></i></span>
+                <span><i class="fa fa-star"></i></span>
+              </p>
+              </div>
             </li>
           </ul>
         </li>
@@ -282,9 +319,11 @@
       <div class="_row_g _col_1">
          <h3>Baan Laksasuhba Rooms</h3>
       </div>
-      <ul class="_row_g _col_2">
+      <ul class="_row_g _col_2 _booking_rooms">
         <li>
-          <img src="assets/img/Hotel Facilities Photos 1.jpeg">
+          <a href="assets/img/Hotel Facilities Photos 1.jpeg" class="_popup_img">
+            <img src="assets/img/Hotel Facilities Photos 1.jpeg">
+          </a>
           <div class="_booking_content">
             <h4>Beautifull Room</h4>
             <p>Lorem Ipsum Dolor, Sit Amet Consectetur Adipisicing Elit. Ipsa, Beatae.</p>
@@ -292,7 +331,9 @@
           </div>
         </li>
         <li>
-          <img src="assets/img/Hotel Facilities Photos 2.jpeg">
+          <a href="assets/img/Hotel Facilities Photos 2.jpeg" class="_popup_img">
+            <img src="assets/img/Hotel Facilities Photos 2.jpeg">
+          </a>
           <div class="_booking_content">
             <h4>Beautifull Room</h4>
             <p>Lorem Ipsum Dolor, Sit Amet Consectetur Adipisicing Elit. Ipsa, Beatae.</p>
@@ -300,7 +341,9 @@
           </div>
         </li>
         <li>
-          <img src="assets/img/Hotel Facilities Photos 3.jpeg">
+          <a href="assets/img/Hotel Facilities Photos 3.jpeg" class="_popup_img">
+            <img src="assets/img/Hotel Facilities Photos 3.jpeg">
+          </a>
           <div class="_booking_content">
             <h4>Beautifull Room</h4>
             <p>Lorem Ipsum Dolor, Sit Amet Consectetur Adipisicing Elit. Ipsa, Beatae.</p>
@@ -308,7 +351,9 @@
           </div>
         </li>
         <li>
-          <img src="assets/img/Hotel Facilities Photos 4.jpeg">
+          <a href="assets/img/Hotel Facilities Photos 4.jpeg" class="_popup_img">
+            <img src="assets/img/Hotel Facilities Photos 4.jpeg">
+          </a>
           <div class="_booking_content">
             <h4>Beautifull Room</h4>
             <p>Lorem Ipsum Dolor, Sit Amet Consectetur Adipisicing Elit. Ipsa, Beatae.</p>
@@ -316,7 +361,9 @@
           </div>
         </li>
         <li>
-          <img src="assets/img/Hotel Facilities Photos 5.jpeg">
+         <a href="assets/img/Hotel Facilities Photos 5.jpeg" class="_popup_img">
+            <img src="assets/img/Hotel Facilities Photos 5.jpeg">
+          </a>
           <div class="_booking_content">
             <h4>Beautifull Room</h4>
             <p>Lorem Ipsum Dolor, Sit Amet Consectetur Adipisicing Elit. Ipsa, Beatae.</p>
@@ -324,7 +371,9 @@
           </div>
         </li>
         <li>
-          <img src="assets/img/Hotel Facilities Photos 6.jpeg">
+          <a href="assets/img/Hotel Facilities Photos 6.jpeg" class="_popup_img">
+            <img src="assets/img/Hotel Facilities Photos 6.jpeg">
+          </a>
           <div class="_booking_content">
             <h4>Beautifull Room</h4>
             <p>Lorem Ipsum Dolor, Sit Amet Consectetur Adipisicing Elit. Ipsa, Beatae.</p>
@@ -332,7 +381,9 @@
           </div>
         </li>
         <li>
-          <img src="assets/img/Hotel Facilities Photos 7.jpeg">
+         <a href="assets/img/Hotel Facilities Photos 7.jpeg" class="_popup_img">
+            <img src="assets/img/Hotel Facilities Photos 7.jpeg">
+          </a>
           <div class="_booking_content">
             <h4>Beautifull Room</h4>
             <p>Lorem Ipsum Dolor, Sit Amet Consectetur Adipisicing Elit. Ipsa, Beatae.</p>
@@ -340,7 +391,9 @@
           </div>
         </li>
         <li>
-          <img src="assets/img/Hotel Facilities Photos 8.jpeg">
+         <a href="assets/img/Hotel Facilities Photos 8.jpeg" class="_popup_img">
+            <img src="assets/img/Hotel Facilities Photos 8.jpeg">
+          </a>
           <div class="_booking_content">
             <h4>Beautifull Room</h4>
             <p>Lorem Ipsum Dolor, Sit Amet Consectetur Adipisicing Elit. Ipsa, Beatae.</p>
@@ -380,7 +433,9 @@
   <!-- Including script -->
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="assets/js/jquery-3.3.1.min.js"></script>
+  <script src="assets/js/magnificpopup.js"></script>
   <script src="assets/js/owl.carousel.min.js"></script>
+  <script src="assets/js/jquery.dateselect.min.js"></script>
   <script src="assets/js/plugin.js"></script>
   <script src="assets/js/custom.js"></script>
 </body>
